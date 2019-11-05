@@ -12,6 +12,15 @@
   - 完全独立的两个软件，毫无关系
   - 任何语言都可以使用 MySQL数据库
 
+# 常见的数据库管理工具
+
+- windows
+  - Navicat
+- Mac OS
+  - Sequel Pro
+- 网页版
+  - PHPMyAdmin（纯PHP网页开发）
+
 # PHP 如何读写数据？
 
 预先创建好数据库、数据表之后，开发中，PHP实际要做的就三件事：
