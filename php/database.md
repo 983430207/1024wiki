@@ -14,6 +14,8 @@
 
 # 常见的数据库管理工具
 
+百度一下，这些工具都可以轻而易举的下载到。
+
 - windows
   - Navicat
 - Mac OS
@@ -39,7 +41,7 @@
 $dsn = 'mysql:dbname=php10-7;host=127.0.0.1';
 $pdo = new PDO($dsn,'数据库账号', '密码');
 
-/*******读数据（增删改，都算写）以删为例***********/
+/*******写数据（增删改，都算写）以删为例***********/
 # 预定义SQL
 $sth = $pdo->prepare("delete from table");
 //执行SQL
