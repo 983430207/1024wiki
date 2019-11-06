@@ -64,7 +64,7 @@ HTML 主要由标签、属性组成。标签决定了功能，属性定义了标
 - 文字输入框
   - `<input type='text' name='email'/>`
   - input 是标签
-  - type、email 都是属性
+  - type、name 都是属性
 - 红色的文字
   - `<span style='color:red;'>我是红色的</a>`
   - span 是标签
