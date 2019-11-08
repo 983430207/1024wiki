@@ -29,6 +29,7 @@
 # 文档目录
 
 - [基础语法](grammer.md)
+- [PHP 中的错误](errors.md)
 - [表达式](expression.md)
 - [变量](variable.md)
 - [数据类型](types.md)
