@@ -12,10 +12,12 @@
     </head>
     <body>
         <div class='add'>
-            <textarea></textarea>
-            <input class='username' type='text' />
-            <input class='submit' type='submit' value='提交'/>
-            <div style='clear:both;'></div>
+            <form action="save.php" method='POST'>
+                <textarea name='content'></textarea>
+                <input name='username' class='username' type='text' />
+                <input class='submit' type='submit' value='提交'/>
+                <div style='clear:both;'></div>
+            </form>
         </div>
 
         <div class='list'>
