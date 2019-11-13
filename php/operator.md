@@ -58,23 +58,23 @@ $a .= 1;
 `and` 和 `&&` 运算符，左右同时为true，则返回true。
 
 ```PHP
-$is = 1>2 and true;
+$is = (1>2 and true);
 //此时输出 false，因为 1>2为false，导致左表达式不成立
 var_dump($is);
 
 // && 和 and 运算符是一个意思，不过&&优先级更高
-$is = 1>2 && true;
+$is = (1>2 && true);
 ```
 
 `or` 和 `||` 运算符，左右任意一个为true，则返回true。
 
 ```PHP
-$is = 1>2 or true;
+$is = (1>2 or true);
 //此时输出 true，右侧满足true的条件，所以该表达式永远返回 true
 var_dump($is);
 
 // || 和 or 运算符是一个意思，不过||优先级更高
-$is = 1>2 || true;
+$is = (1>2 || true);
 ```
 
 # 其他运算符
