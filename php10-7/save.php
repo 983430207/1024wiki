@@ -24,5 +24,5 @@ $sql = "insert into msg (username,content) values ('{$username}', '{$content}')"
 write($pdo, $sql);
 
 //跳转回首页
-header('location: index.php');
+header('location: bootstrap.php');
 ?>
