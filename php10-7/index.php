@@ -1,10 +1,8 @@
 <?php
 include('db.php');
 $sql = "SELECT * FROM `msg` ORDER BY id DESC";
-$sth = $pdo->prepare($sql);
-$sth->execute();
 
-$rows = $sth->fetchAll();
+$rows = read($pdo, $sql);
 ?>
 <html>
     <head>

@@ -20,11 +20,8 @@ include('db.php');
 //编写SQL
 $sql = "insert into msg (username,content) values ('{$username}', '{$content}')";
 // echo $sql; //建议大家测试一下
-//将 SQL送入 prepare 方法
-$sth = $pdo->prepare($sql);
 
-//执行SQL
-$sth->execute();
+write($pdo, $sql);
 
 //跳转回首页
 header('location: index.php');
