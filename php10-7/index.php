@@ -1,3 +1,11 @@
+<?php
+include('db.php');
+$sql = "SELECT * FROM `msg` ORDER BY id DESC";
+$sth = $pdo->prepare($sql);
+$sth->execute();
+
+$rows = $sth->fetchAll();
+?>
 <html>
     <head>
         <title>留言板-1024编程实验室</title>
@@ -21,18 +29,16 @@
         </div>
 
         <div class='list'>
+            <?php
+            foreach($rows as $key=>$msg){ 
+            ?>
             <div class='msg'>
-                <p>用户名</p>
-                <p>留言内容</p>
+                <p><?php echo $msg['username'];?></p>
+                <p><?php echo $msg['content'];?></p>
             </div>
-            <div class='msg'>
-                <p>用户名</p>
-                <p>留言内容</p>
-            </div>
-            <div class='msg'>
-                <p>用户名</p>
-                <p>留言内容</p>
-            </div>
+            <?php
+            }
+            ?>
         </div>
 
     </body>
