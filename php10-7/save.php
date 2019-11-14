@@ -5,9 +5,17 @@ $username = $_POST['username'];
 
 // var_dump($content, $username);
 
-//连接到数据库
-$dsn = 'mysql:dbname=php10-7;host=127.0.0.1';
-$pdo = new PDO($dsn,'php', '123456');
+if( trim($content) == '' or trim($username)=='' ){
+    echo '用户名、留言内容不能为空';
+    exit;
+}
+
+if( $username == 'admin' || $username=='root' || $username=='领导人' ){
+    echo '用户名不能为敏感字';
+    exit;
+}
+
+include('db.php');
 
 //编写SQL
 $sql = "insert into msg (username,content) values ('{$username}', '{$content}')";
