@@ -12,7 +12,7 @@ $pageMax = ceil($total / $pageNum);
 //计算当前应该显示哪些数据
 $page = $_GET['page'] ?? 1;
 
-$offset = ($page-1)*$pageNum; // 1*5;
+$offset = ($page - 1) * $pageNum; // 1*5;
 
 $sql = "SELECT * FROM `msg` ORDER BY id DESC LIMIT $offset,5";
 
@@ -20,27 +20,20 @@ $rows = $db->read($sql);
 ?>
 <!doctype html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
     <title>留言板 之bootstrap美化版</title>
+    <?php include('header.php');?>
 </head>
 
 <body>
     <div class="container">
+        <?php include('menu.php');?>
         <div class="jumbotron">
             <h1 class="display-4">我的留言板</h1>
             <p class="lead">根据1024编程实验室做的入门程序，请大家鉴赏。</p>
         </div>
         <form action="save.php" method='POST'>
             <div class='row'>
-
                 <div class='col-12'>
                     <div class="form-group">
                         <textarea name='content' class="form-control" rows='4'></textarea>
