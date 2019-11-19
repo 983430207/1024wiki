@@ -5,12 +5,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+<?php if($user_id<1):?>
             <li class="nav-item">
                 <a class="nav-link" href="register.php">注册</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login.php">登陆</a>
             </li>
+<?php else:?>
             <li class="nav-item">
                 <a class="nav-link" href="avatar.php">头像</a>
             </li>
@@ -20,6 +22,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">退出</a>
             </li>
+<?php endif;?>
         </ul>
     </div>
 </nav>

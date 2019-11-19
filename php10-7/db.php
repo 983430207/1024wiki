@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+//获取当前登陆用户的ID
+$user_id = $_SESSION['id'] ?? 0;
 
 class DB{
 
