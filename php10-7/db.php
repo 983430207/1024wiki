@@ -1,7 +1,17 @@
 <?php
 session_start();
+
 //获取当前登陆用户的ID
 $user_id = $_SESSION['id'] ?? 0;
+
+//获取用户的头像地址，如果未上传则显示默认图
+function getAvatar($user_id){
+    $head = "./avatar/{$user_id}.jpg";
+    if( file_exists($head) ){
+        return $head ."?". time();
+    }
+    return "default.jpg";
+}
 
 class DB{
 
