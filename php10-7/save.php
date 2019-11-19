@@ -21,7 +21,7 @@ include('db.php');
 $sql = "insert into msg (username,content) values ('{$username}', '{$content}')";
 // echo $sql; //建议大家测试一下
 
-write($pdo, $sql);
+$db->write($sql);
 
 //跳转回首页
 header('location: bootstrap.php');
