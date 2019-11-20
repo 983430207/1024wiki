@@ -71,6 +71,9 @@ $rows = $db->read($sql);
                     <div class='border rounded p-2 mb-2'>
                         <div class='text-primary'><?php echo $msg['username']; ?></div>
                         <div><?php echo $msg['content']; ?></div>
+                        <div class='d-flex'>
+                            <a href='reply.php?msg_id=<?php echo $msg['id'];?>' class='ml-auto btn btn-sm btn-secondary'>详细</a>
+                        </div>
                     </div>
                 <?php
                 }
