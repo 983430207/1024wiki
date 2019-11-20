@@ -1,6 +1,8 @@
 <?php
 include('db.php');
-
+if($user_id<1){
+    die('该页面需要登陆后才能访问');
+}
 
 ?>
 <!doctype html>
