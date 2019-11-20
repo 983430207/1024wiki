@@ -8,6 +8,11 @@ if($msg_id<1){
 
 $sql = "select * from msg where id='{$msg_id}'";
 $msg = $db->read($sql)[0];
+
+//读取回复列表
+$sql = "select * from reply join user on reply.user_id=user.id where msg_id='{$msg_id}' order by reply.id desc";
+// echo $sql;
+$rows = $db->read($sql);
 ?>
 <!doctype html>
 <html lang="en">
@@ -28,7 +33,8 @@ $msg = $db->read($sql)[0];
                 </div>
             </div>
         </div>
-        <form action="save.php" method='POST'>
+        <form action="reply_save.php" method='POST'>
+            <input type='hidden' name='msg_id' value='<?php echo $msg_id;?>'/>
             <div class='row'>
                 <div class='col-12'>
                     <div class="form-group">
@@ -55,14 +61,13 @@ $msg = $db->read($sql)[0];
 
         <div class='row'>
             <div class='col-12'>
+<?php foreach($rows as $reply):?>
                 <div class='border rounded p-2 mb-2'>
-                    <div class='text-primary'>模拟内容</div>
-                    <div>发表人信息</div>
+                    <div class='text-primary'><?php echo $reply['username'];?></div>
+                    <div><?php echo $reply['content'];?></div>
                 </div>
-                <div class='border rounded p-2 mb-2'>
-                    <div class='text-primary'>模拟内容</div>
-                    <div>发表人信息</div>
-                </div>
+<?php endforeach;?>
+                
             </div>
         </div>
 
