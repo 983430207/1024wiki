@@ -22,14 +22,15 @@ $rows = $db->read($sql);
 ?>
 <!doctype html>
 <html lang="en">
+
 <head>
     <title>留言板 之bootstrap美化版</title>
-    <?php include('header.php');?>
+    <?php include('header.php'); ?>
 </head>
 
 <body>
     <div class="container">
-        <?php include('menu.php');?>
+        <?php include('menu.php'); ?>
         <div class="jumbotron">
             <h1 class="display-4">我的留言板</h1>
             <p class="lead">根据1024编程实验室做的入门程序，请大家鉴赏。</p>
@@ -38,7 +39,14 @@ $rows = $db->read($sql);
             <div class='row'>
                 <div class='col-12'>
                     <div class="form-group">
-                        <textarea name='content' class="form-control" rows='4'></textarea>
+                        <textarea id='content' name='content' class="form-control" rows='4'></textarea>
+                        <script>
+                            var editor = new Simditor({
+                                textarea: $('#content')
+                                //optional options
+                            });
+                        </script>
+
                     </div>
                 </div>
                 <div class='col-3'>
