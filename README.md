@@ -10,3 +10,6 @@
 
 [HTML CSS 文档](./ui/readme.md)
 
+# PHP 入门课程资料
+
+十天学会PHP、七天进阶PHP语法两个系列的课程相关课件已发布，详见：[PHP入门系列，课件与大纲](./php-newbie-catalog.md)
